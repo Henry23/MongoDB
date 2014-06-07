@@ -1,4 +1,4 @@
-<h1>Viento Pregunta</h1>
+<h1>Ver Preguntas</h1>
 
 <table>
   <thead>
@@ -14,9 +14,9 @@
     <% @questions.each do |question| %>
       <tr>
         <td><%= question.pregunta %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', question %></td>
+        <td><%= link_to 'Editar', edit_question_path(question) %></td>
+        <td><%= link_to 'Destruir', question, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'Nueva Pregunta', new_question_path %>
