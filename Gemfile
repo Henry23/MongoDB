@@ -49,5 +49,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-git remote add origin https://github.com/Henry23/MongoDB.git
