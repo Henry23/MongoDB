@@ -5,15 +5,254 @@
     <% @questions.shuffle.each_with_index  do |question, i| %>
    
     <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
     <div class="form_row">
-      <% [ question.respuesta,  @questions.shuffle[0].respuesta, @questions.shuffle[1].respuesta, 
-           @questions.shuffle[3].respuesta,  @questions.shuffle[0].respuesta ].each do |theme| %>
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
       <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
       <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
     <% end %>     
       </div>
       <br >
-      <% break if ( i == 10) %>
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
+  
+    <% end %>
+         <% @questions.shuffle.each_with_index  do |question, i| %>
+   
+    <div><% i %> <%=question.pregunta %></div>
+     
+      <% @x = question.respuesta %> 
+      <% @a =  @questions.shuffle[0].respuesta %>
+      <% @b =  @questions.shuffle[0].respuesta %>
+      <% @c =  @questions.shuffle[0].respuesta %>
+    <div class="form_row">
+      <% if (@x != @a) && (@x != @b) && (@x != @c) %>
+      <% [ @x, @a, @b, @c, ].each do |theme| %>
+      <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+      <%= theme.humanize %>
+      
+      <% end %>
+      <% else %>
+     
+    <% end %>     
+      </div>
+      <br >
+      <% break if ( i == 1) %>
   
     <% end %>
   </body >
