@@ -2,6 +2,7 @@
    <h1>  <% @cont %> de 10 </h1>
     <body >         
        <% @x =  @questions.shuffle[0] %> 
+     
     <div><%=@x.pregunta %></div>     
       <% @a =  @questions.shuffle[1].respuesta %>
       <% @b =  @questions.shuffle[2].respuesta %>
@@ -13,39 +14,59 @@
           <%= theme.humanize %>
         <% end %>
       <% else %>
-          lol
+        <% @y = true %>           
+          <% while @y %>
+               <% @x = question.respuesta %> 
+               <% @a =  @questions.shuffle[0].respuesta %>
+               <% @b =  @questions.shuffle[1].respuesta %>
+               <% @c =  @questions.shuffle[2].respuesta %>
+              <div class="form_row">
+             <% if (@x.respuesta != @a) && (@x.respuesta != @b) && (@x.respuesta != @c) && (@a != @b) && (@b != @c)%>     
+                 <% [ @x.respuesta, @a, @b, @c, ].each do |theme| %>
+                       <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
+                       <%= theme.humanize %>
+			              <% end %>                   
+                    <% @y = false %>
+               <% else %>
+                   <% @y = true %>
+               <% end %>
+              </div>
+          <% end %> 
       <% end %>     
       </div>
-      <br >   
-<a href="#myModal" role="button" class="btn" data-toggle="modal">Pista</a>
-<!-- Modal -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Pista</h3>
-  </div>
-  <div class="modal-body">
-    <p><% @x.pista %></p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
-</div>
+      <br > 
+      <a href="#myModal" role="button" class="btn" data-toggle="modal">Pista</a>
+      <!-- Modal -->
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Pista</h3>
+        </div>
+        <div class="modal-body">
+          <p><%= @x.pista %></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+      </div>
       
-      
-<a href="#myModal1" role="button" class="btn" data-toggle="modal">Evaluar</a>
- <!-- Modal -->
-<div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Evaluacion</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary"><%= link_to 'Siguiente', root_path %></button>
-  </div>
-</div>
+      <a href="#myModal1" role="button" class="btn" data-toggle="modal">Evaluar</a>
+      <!-- Modal -->
+      <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Evaluacion</h3>
+        </div>    
+            <div class="modal-body">          
+              <% if false %>
+              <p>Correcto</p>
+               <% else %>
+              <p>Incorrecto</p>
+              <% end %>
+            </div>     
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn"><%= link_to 'Siguiente', root_path %></button>
+        </div>
+      </div>
   </body >
