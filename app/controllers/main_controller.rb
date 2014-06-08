@@ -3,6 +3,6 @@ class MainController < ApplicationController
   end
  def index
     @questions = Question.all
+    @cont = 1;
   end
-
 end

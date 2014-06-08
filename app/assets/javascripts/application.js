@@ -15,3 +15,8 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+function evaluar(){
+   var m = document.all.theme.status;
+    
+  }
