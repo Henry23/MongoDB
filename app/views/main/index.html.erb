@@ -1,101 +1,103 @@
 <p id="notice"><%= notice %></p>  
-  
-    <body >      
+ 
+ <% @cont = 0 %>
+<div class="container">
+	<div class="row-fluid">
+          <br>
+          <br>
+           <div class="hero-unit"> 
     <% if @x.nil? %>
+             lol
       <% else %>
       <div><%=@x.pregunta %></div>             
       <% if (@x.respuesta != @a) && (@x.respuesta != @b) && (@x.respuesta != @c) && (@a != @b) && (@b != @c)  && (@c != @a ) %>
        <br>
-      <% @array = [ @x.respuesta, @a, @b, @c, ].shuffle %>
-      
+      <% @array = [ @x.respuesta, @a, @b, @c, ].shuffle %>      
           <a href="#myModal2" role="button" class="btn btn-link" data-toggle="modal"><%=  @array[0] %></a>
           <!-- Modal -->
           <div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
             <% if @x.respuesta ==  @array[0] %>
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+                    
               <h3 id="myModalLabel2">Correcto</h3>
             </div>    
             <div class="modal-body"> 
               <p>Usted Preciono <%= @array[0] %></p>    
               <p>Bien hecho</p>               
             </div>
+            <% @cont = 1 %>           
             <% else %>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <div class="modal-header">               
               <h3 id="myModalLabel2">Incorrecto</h3>
             </div>         
             <div class="modal-body">
                <p>Usted Preciono <%= @array[0] %></p>       
               <p>La respuesta correcta es <%= @x.respuesta %></p>               
-        </div>
+             </div>           
             <br >
-        <% end %>
-            <div class="modal-footer">
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+             <% @cont = 0 %>   
+            <% end %>
+            <div class="modal-footer">          
               <button class="btn"><%= link_to 'Siguiente', root_path %></button>
             </div>
           </div>
-            <br>   
-      
-      
+          <br>   
+        
           <a href="#myModal3" role="button" class="btn btn-link" data-toggle="modal"><%=  @array[1] %></a>
           <!-- Modal -->
           <div id="myModal3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
             <% if @x.respuesta ==  @array[1] %>
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+                  
               <h3 id="myModalLabel3">Correcto</h3>
             </div>    
             <div class="modal-body"> 
               <p>Usted Preciono <%= @array[1] %></p>    
               <p>Bien hecho</p>               
             </div>
+                <% @cont = 1 %>       
             <% else %>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <div class="modal-header">             
               <h3 id="myModalLabel3">Incorrecto</h3>
             </div>         
             <div class="modal-body">
                <p>Usted Preciono <%= @array[1] %></p>       
               <p>La respuesta correcta es <%= @x.respuesta %></p>               
         </div>
-            <br >
+            <br >   
+             <% @cont = 0 %>   
         <% end %>
             <div class="modal-footer">
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
               <button class="btn"><%= link_to 'Siguiente', root_path %></button>
             </div>
           </div>
             <br>         
       
-      
-      
+        
           <a href="#myModal4" role="button" class="btn btn-link" data-toggle="modal"><%=  @array[3] %></a>
           <!-- Modal -->
           <div id="myModal4" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
             <% if @x.respuesta ==  @array[3] %>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <div class="modal-header">                   
               <h3 id="myModalLabel3">Correcto</h3>
             </div>    
             <div class="modal-body"> 
               <p>Usted Preciono <%= @array[3] %></p>    
               <p>Bien hecho</p>               
             </div>
+              <% @cont = 1 %>       
             <% else %>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <div class="modal-header">                 
               <h3 id="myModalLabel3">Incorrecto</h3>
             </div>         
             <div class="modal-body">
                <p>Usted Preciono <%= @array[3] %></p>       
               <p>La respuesta correcta es <%= @x.respuesta %></p>               
         </div>
-            <br >
+            <br >   
+             <% @cont = 0 %>   
         <% end %>
-            <div class="modal-footer">
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <div class="modal-footer">           
               <button class="btn"><%= link_to 'Siguiente', root_path %></button>
             </div>
           </div>
@@ -105,34 +107,35 @@
           <!-- Modal -->
           <div id="myModal5" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
             <% if @x.respuesta ==  @array[2] %>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <div class="modal-header">                
               <h3 id="myModalLabel4">Correcto</h3>
             </div>    
             <div class="modal-body"> 
               <p>Usted Preciono <%= @array[2] %></p>    
               <p>Bien hecho</p>               
             </div>
+          <% @cont = 1 %>       
             <% else %>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <div class="modal-header">                
               <h3 id="myModalLabel4">Incorrecto</h3>
             </div>         
             <div class="modal-body">
                <p>Usted Preciono <%= @array[2] %></p>       
               <p>La respuesta correcta es <%= @x.respuesta %></p>               
-        </div>
-            <br >
-        <% end %>
-            <div class="modal-footer">
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>           
+            <br >    
+             <% @cont = 0 %>   
+             <% end %>
+            <div class="modal-footer">           
               <button class="btn"><%= link_to 'Siguiente', root_path %></button>
             </div>
           </div>
-            <br>         
-                
-      <% else %>
-        <% @y = true %>           
+            <br>
+            
+   
+     <% else %>
+      
+             <% @y = true %>           
           <% while @y %>
                <% @a =  @questions.shuffle[0].respuesta %>
                <% @b =  @questions.shuffle[1].respuesta %>
@@ -145,16 +148,17 @@
           <div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
             <% if @x.respuesta ==  @array[0] %>
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+                  
               <h3 id="myModalLabel2">Correcto</h3>
             </div>    
             <div class="modal-body"> 
               <p>Usted Preciono <%= @array[0] %></p>    
               <p>Bien hecho</p>               
             </div>
+               <% @cont = 1 %>     
             <% else %>
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+                   
               <h3 id="myModalLabel2">Incorrecto</h3>
             </div>         
             <div class="modal-body">
@@ -162,30 +166,30 @@
               <p>La respuesta correcta es <%= @x.respuesta %></p>               
         </div>
             <br >
+             <% @cont = 0 %>   
         <% end %>
             <div class="modal-footer">
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            
               <button class="btn"><%= link_to 'Siguiente', root_path %></button>
             </div>
           </div>
             <br>   
-      
-      
+           
           <a href="#myModal3" role="button" class="btn btn-link" data-toggle="modal"><%=  @array[1] %></a>
           <!-- Modal -->
           <div id="myModal3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
             <% if @x.respuesta ==  @array[1] %>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <div class="modal-header">                   
               <h3 id="myModalLabel3">Correcto</h3>
             </div>    
             <div class="modal-body"> 
               <p>Usted Preciono <%= @array[1] %></p>    
               <p>Bien hecho</p>               
             </div>
+               <% @cont = 1 %>     
             <% else %>
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+                
               <h3 id="myModalLabel3">Incorrecto</h3>
             </div>         
             <div class="modal-body">
@@ -193,9 +197,9 @@
               <p>La respuesta correcta es <%= @x.respuesta %></p>               
         </div>
             <br >
+             <% @cont = 0 %>   
         <% end %>
-            <div class="modal-footer">
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <div class="modal-footer">              
               <button class="btn"><%= link_to 'Siguiente', root_path %></button>
             </div>
           </div>
@@ -208,26 +212,28 @@
           <div id="myModal4" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
             <% if @x.respuesta ==  @array[3] %>
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+                 
               <h3 id="myModalLabel3">Correcto</h3>
             </div>    
             <div class="modal-body"> 
               <p>Usted Preciono <%= @array[3] %></p>    
               <p>Bien hecho</p>               
             </div>
+              <% @cont = 1 %>     
             <% else %>
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+               
               <h3 id="myModalLabel3">Incorrecto</h3>
             </div>         
             <div class="modal-body">
                <p>Usted Preciono <%= @array[3] %></p>       
               <p>La respuesta correcta es <%= @x.respuesta %></p>               
         </div>
-            <br >
+            <br >  
+             <% @cont = 0 %>   
         <% end %>
             <div class="modal-footer">
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+             
               <button class="btn"><%= link_to 'Siguiente', root_path %></button>
             </div>
           </div>
@@ -237,27 +243,26 @@
           <!-- Modal -->
           <div id="myModal5" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
             <% if @x.respuesta ==  @array[2] %>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <div class="modal-header">                  
               <h3 id="myModalLabel4">Correcto</h3>
             </div>    
             <div class="modal-body"> 
               <p>Usted Preciono <%= @array[2] %></p>    
               <p>Bien hecho</p>               
             </div>
+           <% @cont = 1 %>     
             <% else %>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <div class="modal-header">                  
               <h3 id="myModalLabel4">Incorrecto</h3>
             </div>         
             <div class="modal-body">
                <p>Usted Preciono <%= @array[2] %></p>       
               <p>La respuesta correcta es <%= @x.respuesta %></p>               
-        </div>
-            <br >
+            </div>
+            <br >   
+              <% @cont = 0 %>     
         <% end %>
-            <div class="modal-footer">
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <div class="modal-footer">          
               <button class="btn"><%= link_to 'Siguiente', root_path %></button>
             </div>
           </div>
@@ -267,21 +272,53 @@
                 <% @y = true %>
              <% end %>
           <% end %> 
-      <% end %>       
+      <% end %>             
+     
+             <% Contador.all[0].update( id:(Contador.all[0].id), contC:(Contador.all[0].contC +  @cont ), contPg:(Contador.all[0].contPg + 1)) %>
+  
+              <% if Contador.all[0].contPg > 10  %>
+                <% Contador.all[0].update( id:(Contador.all[0].id), contC:0, contPg:1 ) %>
+           
+             <% end %>
+             
+             
+             
       <br >  
       <a href="#myModal" role="button" class="btn" data-toggle="modal">Pista</a>
       <!-- Modal -->
       <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+       
           <h3 id="myModalLabel">Pista</h3>
         </div>
         <div class="modal-body">
           <p><%= @x.pista %></p>
         </div>
         <div class="modal-footer">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
         </div>
+       
         <% end %>
-      </div>
+        </div>      
+    </div><!-- /.span4 -->
+        <div class="span4">         
       
+          </div>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+   <div class="container">
+        <div class="row">
+          <div class="span9">
+            <%= bootstrap_flash %>
+            <%= yield %>
+          </div>
+      </div>
+   
+
+ 
+   <footer>
+        <p><%= Contador.all[0].contPg %> de  10 </p>
+      </footer>
+
+   </div> <!-- /container -->
+

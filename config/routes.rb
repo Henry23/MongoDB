@@ -1,10 +1,12 @@
 MongoDB::Application.routes.draw do
+  resources :contadors
+
   resources :questions
 
   get "answer/new"
   get "question/new"
   get "main/index"
-  get "main/show"
+
   
   
   # The priority is based upon order of creation: first created -> highest priority.

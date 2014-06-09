@@ -1,0 +1,28 @@
+<h1>Listing contadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cont</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contadors.each do |contador| %>
+      <tr>
+        <td><%= contador.contC %></td>
+        <td><%= contador.contPg %></td>
+        <td><%= link_to 'Show', contador %></td>
+        <td><%= link_to 'Edit', edit_contador_path(contador) %></td>
+        <td><%= link_to 'Destroy', contador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contador', new_contador_path %>

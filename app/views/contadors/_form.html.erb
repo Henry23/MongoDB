@@ -1,0 +1,23 @@
+<%= form_for(@contador) do |f| %>
+  <% if @contador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contador.errors.count, "error") %> prohibited this contador from being saved:</h2>
+
+      <ul>
+      <% @contador.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contC %><br>
+    <%= f.text_field :contC %>
+       <%= f.label :contPg %><br>
+    <%= f.text_field :contPg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
