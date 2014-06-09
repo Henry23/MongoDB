@@ -4,6 +4,8 @@ MongoDB::Application.routes.draw do
   get "answer/new"
   get "question/new"
   get "main/index"
+  get "main/show"
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

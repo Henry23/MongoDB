@@ -16,14 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
-function myFunction( res ) {
-    var x = document.getElementById("myRadio").value;
-    document.getElementById("demo").innerHTML = x;
-    if ( res == x ) 
-    {
-      return true;  
-    }else 
-      {
-        return false;
-      }
-}
+jQuery("#button1:checked").each(function() 
+  jQuery("#field2")[0].disabled = true; 
+  jQuery("#field1")[0].disabled = false; 
+}); 
