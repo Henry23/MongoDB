@@ -16,7 +16,14 @@
 //= require turbolinks
 //= require_tree .
 
-function evaluar(){
-   var m = document.all.theme.status;
-    
-  }
+function myFunction( res ) {
+    var x = document.getElementById("myRadio").value;
+    document.getElementById("demo").innerHTML = x;
+    if ( res == x ) 
+    {
+      return true;  
+    }else 
+      {
+        return false;
+      }
+}

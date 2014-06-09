@@ -2,7 +2,6 @@
    <h1>  <% @cont %> de 10 </h1>
     <body >         
        <% @x =  @questions.shuffle[0] %> 
-     
     <div><%=@x.pregunta %></div>     
       <% @a =  @questions.shuffle[1].respuesta %>
       <% @b =  @questions.shuffle[2].respuesta %>
@@ -16,16 +15,18 @@
       <% else %>
         <% @y = true %>           
           <% while @y %>
-               <% @x = question.respuesta %> 
+               <% @x =  @questions.shuffle[0] %> 
                <% @a =  @questions.shuffle[0].respuesta %>
                <% @b =  @questions.shuffle[1].respuesta %>
                <% @c =  @questions.shuffle[2].respuesta %>
               <div class="form_row">
              <% if (@x.respuesta != @a) && (@x.respuesta != @b) && (@x.respuesta != @c) && (@a != @b) && (@b != @c)%>     
-                 <% [ @x.respuesta, @a, @b, @c, ].each do |theme| %>
-                       <br><%= radio_button_tag 'radioboton', theme, @theme == theme %>
-                       <%= theme.humanize %>
-			              <% end %>                   
+                <form id="myRadio" >
+                  <input type="radio" id="myRadio0"  value=<%= @x.respuesta %>><%= @x.respuesta %><br>
+                  <input type="radio" id="myRadio1"  value=<%= @x.respuesta %>><%= @a %><br>
+                   <input type="radio" id="myRadio2" value=<%= @x.respuesta %>><%= @b %><br>
+                  <input type="radio" id="myRadio3"  value=<%= @x.respuesta %>><%= @c %><br>
+                </form>                
                     <% @y = false %>
                <% else %>
                    <% @y = true %>
@@ -53,17 +54,26 @@
       <a href="#myModal1" role="button" class="btn" data-toggle="modal">Evaluar</a>
       <!-- Modal -->
       <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      
+        <% if 'myFunction(test)'  %>
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h3 id="myModalLabel">Evaluacion</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+          <h3 id="myModalLabel">Correcto</h3>
         </div>    
-            <div class="modal-body">          
-              <% if false %>
-              <p>Correcto</p>
-               <% else %>
-              <p>Incorrecto</p>
-              <% end %>
-            </div>     
+            <div class="modal-body">
+            
+              <p>Good Job</p>               
+        </div>
+        <% else %>
+         <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>       
+            <h3 id="myModalLabel">Incorrecto</h3>
+        </div>         
+            <div class="modal-body">   
+              <p><%= @theme %></p>
+              <p><%= @x.respuesta %></p>               
+        </div>
+        <% end %>
         <div class="modal-footer">
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
           <button class="btn"><%= link_to 'Siguiente', root_path %></button>
