@@ -4,7 +4,7 @@
     <% if @x.nil? %>
       <% else %>
       <div><%=@x.pregunta %></div>             
-      <% if (@x.respuesta != @a) && (@x.respuesta != @b) && (@x.respuesta != @c) && (@a != @b) && (@b != @c)%>
+      <% if (@x.respuesta != @a) && (@x.respuesta != @b) && (@x.respuesta != @c) && (@a != @b) && (@b != @c)  && (@c != @a ) %>
        <br>
       <% @array = [ @x.respuesta, @a, @b, @c, ].shuffle %>
       
@@ -138,7 +138,7 @@
                <% @a =  @questions.shuffle[0].respuesta %>
                <% @b =  @questions.shuffle[1].respuesta %>
                <% @c =  @questions.shuffle[2].respuesta %>                      
-             <% if (@x.respuesta != @a) && (@x.respuesta != @b) && (@x.respuesta != @c) && (@a != @b) && (@b != @c)%>
+             <% if (@x.respuesta != @a) && (@x.respuesta != @b) && (@x.respuesta != @c) && (@a != @b) && (@b != @c)  && (@c != @a ) %>
                    <% @array = [ @x.respuesta, @a, @b, @c, ].shuffle %>
       
           <a href="#myModal2" role="button" class="btn btn-link" data-toggle="modal"><%=  @array[0] %></a>
