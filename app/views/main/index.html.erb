@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>  
-   <h1>  <% @cont %> de 10 </h1>
+  
     <body >      
-    <div><%=@x.pregunta %></div>             
+    <% if @x.nil? %>
+      <% else %>
+      <div><%=@x.pregunta %></div>             
       <% if (@x.respuesta != @a) && (@x.respuesta != @b) && (@x.respuesta != @c) && (@a != @b) && (@b != @c)%>
        <br>
       <% @array = [ @x.respuesta, @a, @b, @c, ].shuffle %>
@@ -281,5 +283,6 @@
         <div class="modal-footer">
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
         </div>
+        <% end %>
       </div>
       
